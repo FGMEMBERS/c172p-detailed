@@ -411,22 +411,15 @@
     </filter>
 
     <logic>
-        <name>Amphibious Panel Lights On/Off</name>
+        <name>Turn Indicator Serviceable</name>
         <input>
-            <and>
-                <less-than>
-                    <property>systems/electrical/outputs/instrument-lights</property>
-                    <value>31.5</value>
-                </less-than>
-                <greater-than>
-                    <property>systems/electrical/outputs/instrument-lights</property>
-                    <value>20.0</value>
-                </greater-than>
-                <property>/controls/switches/master-avionics</property>
-            </and>
+            <greater-than>
+                <property>systems/electrical/outputs/turn-coordinator</property>
+                <value>6.0</value>
+            </greater-than>
         </input>
         <output>
-            <property>/sim/model/c172p/lighting/amphibious</property>
+            <property>instrumentation/turn-coordinator/serviceable</property>
         </output>
     </logic>
 
